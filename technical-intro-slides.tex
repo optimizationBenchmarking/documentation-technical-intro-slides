@@ -1,0 +1,53 @@
+
+\documentclass[mathserif]{beamer}%
+%
+%
+\RequirePackage{./styles/slides}%
+%
+\title[%
+OptimizationBenchmarking: Technical Intro%
+]{%
+\mbox{\optimizationBenchmarkingText}\\%
+\mbox{-- A Technical Introduction --}%
+}%
+%
+%
+\author[Thomas Weise]{%
+Thomas Weise\\%
+\footnotesize{%
+\mbox{\href{mailto:tweise@ustc.edu.cn}{tweise@ustc.edu.cn} $\cdot$} %
+\mbox{\href{mailto:tweise@gmx.de}{tweise@gmx.de} $\cdot$} %
+\mbox{\href{http://www.it-weise.de}{http://www.it-weise.de}}}}%
+%
+\institute[UBRI]{%
+USTC-Birmingham Joint Res. Inst. in Intelligent Computation and Its Applications (UBRI)\\%
+University of Science and Technology of China (USTC), Hefei 230027, Anhui, China%
+}%
+%
+%
+\begin{document}%
+%
+%
+\protected\gdef\barcodes{%
+\locate{}{%
+\includegraphics[width=0.26\paperwidth]{graphics/barcodes/website}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{website}}}%
+%\bigskip\\%
+%\includegraphics[width=0.26\paperwidth]{graphics/barcodes/slides}~\rotatebox{90}{\Large{~\textcolor{footerdarkblue}{slides}}}%
+}{0.625}{0.16}%
+}%
+%
+\startPresentation{\barcodes}%
+%
+\printSectionOutlines{\barcodes}%
+%
+%
+\input{part_introduction.tex}%
+\section{Installation}%
+\input{part_install.tex}%
+\input{part_conclusions.tex}%
+%
+\endPresentation%
+%
+%
+\end{document}%%
+\endinput%

@@ -1,0 +1,22 @@
+##
+## Build with CircleCI
+##
+## https://circleci.com/gh/optimizationBenchmarking/documentation-technical-intro-slides
+#
+machine:
+# Install the newest version of ant.
+  pre:
+  - sudo apt-get -q -y update
+  - sudo apt-get -q -y install texlive texlive-lang-cjk texlive-luatex texlive-xetex texlive-science
+    
+# We do nothing here.
+dependencies:
+  override:
+    - echo "Nothing"
+      
+# We set a high timeout to prevent the test from being
+# terminated unexpectedly.
+test:
+  override:
+    - ./scripts/mintex.sh technical-intro-slides xelatex pdflatex lualatex
+    - cp "technical-intro-slides.pdf" "$CIRCLE_ARTIFACTS"

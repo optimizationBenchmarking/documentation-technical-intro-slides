@@ -1,0 +1,41 @@
+%
+\begin{frame}[t]%
+\frametitle{Installation}%
+\centering\footnotesize%
+%
+\strut\vfill%
+\mbox{\textbf{\large{Website:~\href{http://optimizationbenchmarking.github.io}{http://optimizationbenchmarking.github.io}}}}%
+\vfill%
+%
+\begin{itemize}%
+%
+\item \alert{Stand-Alone GUI}: easily store, annotate, and process your experimental results:%
+\begin{itemize}%
+\item client/server application: computation at the server, joint repository for data of your group%
+\item software requirements: Java~7~JDK\scitep{JAVA2PSESAS}, TeX~Live\scitep{TEXLIVE}, \codeil{R}\scitep{WU2006TRPFSC} with several packages%
+\item download software from web page%
+\item \mbox{\codeil{java -jar evaluatorGui.jar}}%
+\item open browser to \codeil{http://localhost:8080}%
+\end{itemize}%
+%
+\uncover<2->{%
+\vfill\vfill%
+%
+\item \alert{Application Dockerized for you!}%
+\begin{itemize}%
+\item install Docker from\\\url{http://www.docker.com/} and do%
+\item \mbox{\codeil{docker run -t -i -p 9999:8080/tcp}} \mbox{\codeil{optimizationbenchmarking/evaluator-gui}}%
+\item open browser to \codeil{http://localhost:9999} on Linux, replace \codeil{localhost} with the IP address of the Docker container under Windows or Mac OS%
+\end{itemize}%
+%
+\vfill%
+}%
+%
+\locateGraphic{2-}{width=0.33\paperwidth}{graphics/website/website}{0.63}{0.45}%
+\locateGraphic{1}{width=0.33\paperwidth}{graphics/barcodes/website}{0.63}{0.47}%
+%
+\end{itemize}%
+%
+\end{frame}%
+%
+
