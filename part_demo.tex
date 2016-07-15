@@ -1,0 +1,139 @@
+%
+\section{Demo}%
+%
+\edef\maxSat{MAX-SAT}%
+\edef\maxTSat{MAX-3SAT}%
+\def\oFlip{\ensuremath{1}-flip}%
+\def\tFlip{\ensuremath{2}-flip}%
+\def\mFlip{\ensuremath{m}-flip}%
+%
+\gdef\maxSatClauses{\textcolor{red}{\ensuremath{k}}}%
+\gdef\maxSatVariables{\textcolor{green}{\ensuremath{n}}}%
+\gdef\maxSatVariable{\ensuremath{x}}%
+\gdef\maxSatVariablei#1{\ensuremath{\maxSatVariable_{#1}}}%
+\gdef\maxSatFormula{\ensuremath{B}}%
+%
+\begin{frame}[t]%
+\frametitle{\maxSat}%
+\begin{itemize}%
+\item Maximum Satisfiability Problems (\maxSat)\uncover<2->{:%
+\begin{itemize}
+\item Given: formula \maxSatFormula\ in Boolean logic consisting of \maxSatVariables\ Boolean variables $\vec{\maxSatVariable}=(\maxSatVariablei{1}, \maxSatVariablei{2}, \dots, \maxSatVariablei{\maxSatVariables})^T$ which each can be either \texttt{true} or \texttt{false}%
+\item<3-> \maxSatFormula\ consists of \maxSatClauses\ clauses which are combined with \inQuotes{$\land$}%
+\item<4-> Goal: minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$%
+\item<5-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
+\end{itemize}%
+}%
+%
+\item<6-> We want to compare the performance of six algorithms\uncover<7->{:%
+\begin{enumerate}%
+\item 1-flip Hill Climber\only<-2>{: starts with a random bit string, flips one of the \maxSatVariables\ bits in each iteration and keeps the new bit string if it is better}%
+\item<8-> 1-flip Hill Climber with Restarts\only<3>{ after $z$ moves without improvements; initially $z=1$ and increased by~$1$ after each restart}%
+\item<9-> 2-flip Hill Climber%
+\item<10-> 2-flip Hill Climber with Restarts%
+\item<11-> $m$-flip Hill Climber\only<6>{, $m$ chosen randomly according to geometric distribution}%
+\item<12-> $m$-flip Hill Climber with Restarts%
+\end{enumerate}%
+}%
+%
+\item<13-> As benchmark, we use 100 instances from \satLib\expandafter\scitep{\satLibReferences} with different values of \maxSatVariables\ and \maxSatClauses%
+%
+\end{itemize}%
+%
+\locateGraphic{-5}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.54}%
+%
+\strut\\\strut\\\strut\\\strut\\\strut\\\strut\\\strut\\\strut%
+%
+\end{frame}%
+%
+\input{part_install.tex}%
+%
+\begin{frame}[b,label=maxSatInteractiveDemoEnd]%
+\frametitle{The Flow / Demo}%
+%
+\only<-1>{%
+\strut\vfill\strut%
+\centering{\LARGE{\textbf{\alert{The evaluator works as follows\dots}}}}%
+\strut\vfill\strut%
+}\only<2->{%
+\strut\\\strut\\\strut\\\strut\\\strut\\\strut\\\strut\\\strut%
+}%
+%
+\locate{2-3}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_input_1_results}}{0.05}{0.16}%
+\locate{4-5}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_input_2_dimensions}}{0.05}{0.16}%
+\locate{6-7}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_input_3_instances}}{0.05}{0.16}%
+\locate{8-9}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_input_4_experiment}}{0.05}{0.16}%
+\locate{10-11}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_input_5_driver}}{0.05}{0.16}%
+\locate{12}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_config_1_config}}{0.05}{0.16}%
+\locate{13}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_config_2_evaluation}}{0.05}{0.16}%
+\locate{14-15}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_evaluation}}{0.05}{0.16}%
+\locate{16}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_output_1_graphic}}{0.05}{0.16}%
+\locate{17}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_output_2_document}}{0.05}{0.16}%
+\locate{18}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_output_3_latex}}{0.05}{0.16}%
+\locate{19-21}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_output_4_pdf}}{0.05}{0.16}%
+\locate{22}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow_output_5_xhtml}}{0.05}{0.16}%
+\locate{23-}{\includegraphics[width=0.9\paperwidth]{graphics/flow/flow}}{0.05}{0.16}%
+%
+\only<2->{%
+\begin{small}%
+\begin{itemize}%
+%
+\only<-9>{%
+\item We got a couple of log files for each experiment\uncover<3->{: 6 experiments in our example, each with $10\times 10\times 20=\numprint{2000}$ log files}%
+%}%
+%
+%\only<4-5>{%
+\item<4-> We specify which dimensions we have measured\uncover<5->{: \measureFEs, \measureRuntime, and \measureObjectiveValue\ in our example\uncover<-5>{ (\alert{demo})}}%
+%}%
+%
+%\only<6-7>{%
+\item<6-> We specify which benchmark instances we have and what their features are\uncover<7->{: $10\times 10$ instances in our example, with features \maxSatVariables\ and \maxSatClauses\uncover<-7>{ (\alert{demo})}}%
+%}%
+%
+%\only<8-9>{%
+\item<8-> For each experiment, we specify the parameters\uncover<9->{: in our example, these are \texttt{algorithm}, \texttt{operator}, \texttt{restart}\uncover<-9>{ (\alert{demo})}}%
+}%
+%
+\only<10-13>{%
+\item<10-> An \inQuotes{input driver} loads the data\uncover<11->{: most commonly, the data will be in Comma-, Tab-, or Space-Separated-Values format (\textit{CSV}), but we also support \bbob\expandafter\scitep{\bbobReferences} and \tspSuite\expandafter\scitep{\tspSuiteReferences}}%
+%}%
+%
+%\only<12>{%
+\item<12-> Via a configuration file, we choose which input and output formats to use, as well as which file specifies the evaluation process%
+%}%
+%
+%\only<13>{%
+\item<13-> The \texttt{evaluation.xml} specifies \emph{how} to evaluate the data, i.e., which evaluation modules to apply%
+}%
+%
+\only<14-15>{%
+\item<14-> An evaluation module prints on particular type of information about an experiment or experiment set, such as the ECDF, or a table with final results, etc\dots%
+\item<15-> Evaluation modules can be applied multiple times, with different configurations (e.g., we can plot ECDFs for different target solution qualities)%
+}%
+%
+\only<16>{%
+\item<16-> We can choose among several different formats to be used for graphics, including EPS\scitep{A1992EPFFS}, PDF\scitep{ISO320002008}, PGF (\LaTeX), SVG(Z), EMF, PNG\scitep{RFC2083}, GIF\scitep{CI1990GIFV8}, BMP, and JPG%
+\\\strut%
+\vspace{0.19\paperheight}%
+\strut\\%
+}%
+%
+%
+\only<17->{%
+\item<17-> We can also choose among different formats for the report documents, including\only<-17>{\dots}%
+%
+\uncover<18->{ %
+\LaTeX\scitep{MGBCR2004TLC,GMS1994TLC,L1994LADPSUGARM,OPHS2011TNSSITLOLI1M}\uncover<19->{:%
+\begin{itemize}%
+\item can automatically be compiled to PDF\scitep{ISO320002008}, if a \LaTeX\ compiler (such as TeXLive\scitep{TEXLIVE} or MiKTeX\scitep{MIKTEX}) is auto-detected%
+\item<20-> different document classes, such as IEEEtran\scitep{IEEETRAN}, Springer LLNCS\scitep{SPRINGERLNCS}, ACM sig-alternate\scitep{ACMSIGALTERNATE} can be chosen%
+\end{itemize}%
+}}%
+}%
+%
+\end{itemize}%
+\end{small}}%
+%
+\end{frame}%
+%
+%
