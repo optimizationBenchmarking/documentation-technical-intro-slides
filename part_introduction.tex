@@ -7,7 +7,7 @@
 \begin{itemize}%
 \item Benchmarking of optimization algorithms is \only<2->{incredibly }important\uncover<3->{, but cumbersome}%
 \item<4-> Tool support is needed\uncover<5->{, examples are \bbob's \coco\expandafter\scitep{\cocoReferences}, \tspSuite\scitep{\tspSuiteReferences}, \frameworkStyle{UBCSAT}\scitep{TH2004UAIAEEFSAFSAMS}, or \frameworkStyle{AOAB}\scitep{WNT2010AOABAOAB}\uncover<6->{ -- \textcolor<6>{red}{which are all \inQuotes{field-specific}}}}
-\item<7-> Can we design a general tool for evaluating results from experiments with optimization algorithms?%
+\item<7-> Can we design a general tool for evaluating results from experiments with (single-objective) optimization algorithms?%
 \\~\bigskip~\\\bigskip~\\\bigskip~\\\medskip%
 \item<8-> {\textbf{\Large{\alert{\optimizationBenchmarking\ is an attempt to do just that.}}}}%
 \end{itemize}%
@@ -45,7 +45,7 @@
 \item<18-> But this is all \emph{very} cumbersome, involves much work and much data\dots%
 \end{enumerate}%
 }%
-\item<19-> \alert{The \optimizationBenchmarking\ framework \textcolor<19>{green}{can automatize} much of the evaluation procedure}%
+\item<19-> \alert<19>{The \optimizationBenchmarking\ framework \textcolor<19>{green}{can automatize} much of the evaluation procedure}\uncover<20>{\dots}%
 \item<20-> {\dots}and make use of \textcolor<20>{red}{meta-data} about experiments to group and aggregate information.% 
 \end{itemize}%
 %
@@ -72,7 +72,7 @@ Example for data collected in a log file by \tspSuite\expandafter\scitep{\tspSui
 \includegraphics[width=0.28\paperwidth]{graphics/performance/ert_example/ert_example}%
 }}\strut%
 }{%
-Examples for progress\only<14->{ and ERT}\only<15->{, ERT, and ECDF} diagrams from \tspSuite\expandafter\scitep{\tspSuiteReferences} for different algorithms (signified by different colors) over different sub-sets of the \tspLib\expandafter\scitep{\tspLibReferences} data.%
+Examples for progress\only<14->{ and ECDF}\only<15->{, ERT, and ECDF} diagrams from \tspSuite\expandafter\scitep{\tspSuiteReferences} for different algorithms (signified by different colors) over different sub-sets of the \tspLib\expandafter\scitep{\tspLibReferences} data.%
 }{0.0375}{0.545}{0.925}%
 %
 \end{frame}%
