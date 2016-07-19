@@ -19,34 +19,32 @@
 \begin{itemize}%
 \item In optimization or Machine Learning, the following experimental procedure is often used\uncover<2->{%
 \begin{enumerate}%
-\item Select a set of benchmark instances which covers some \textcolor<20>{red}{different problem features}\only<3>{:%
+\item Select a set of benchmark instances which covers some \textcolor<18>{red}{different problem features}\only<3>{:%
 \begin{itemize}%
 \item e.g., \bbob\expandafter\scitep{\bbobReferences} offers different benchmark functions for numerical optimization problems%
 \end{itemize}%
 }%
-\item<5-> Do experiments\only<11->{ with \textcolor<20>{red}{different algorithms/setups}}\only<6-10>{:%
+\item<5-> Do experiments\only<11->{ with \textcolor<18>{red}{different algorithms/setups}}\only<6-10>{:%
 \begin{itemize}%
 \item several independent runs of algorithm for each benchmark instance%
-\item<7-> collect algorithm progress information, e.g., as \emph{\inQuotes{runtime - bestObjectiveValue}} tuples%
+\item<7-> collect algorithm progress information, e.g., as \emph{\inQuotes{(runtime, best-objective-value-so-far)}} tuples%
 \item<8-> one log file per run, each log file has several such tuples%
 \item<9-> repeat for different algorithm parameter settings (e.g., different population sizes of an EA)%
 \item<10-> repeat with other algorithms for comparison purposes%
 \end{itemize}%
 }%
-\item<12-> Evaluate the gathered data\only<13->{:%
+\item<12-> Evaluate the gathered data\only<13->{, e.g.:%
 \begin{itemize}%
-\item \textcolor<19>{green}{draw diagrams of progress of solution quality over time}%
-\item<14-> \textcolor<19>{green}{draw diagrams of advanced statistical parameters such as ECDF\scitep{HAFR2012RPBBOBES,HS1998ELVAPAR,TH2004UAIAEEFSAFSAMS,WCTLTCMY2014BOAAOSFFTTSP}\only<15->{ and ERT\scitep{HAFR2012RPBBOBES,WCTLTCMY2014BOAAOSFFTTSP}} (over time)}%
-\item<16-> use statistical tests to compare results (at different points during the runs)\only<19>{ \textcolor<19>{green}{(soon to come)}}%
-\item<17-> analyze the impact of benchmark features and algorithm parameters on the above\only<19>{ \textcolor<19>{green}{(soon to come)}}%
+\item \textcolor<17>{green}{draw diagrams of progress of solution quality over time}%
+\item<14-> \textcolor<17>{green}{draw diagrams of advanced statistical parameters such as ECDF\scitep{HAFR2012RPBBOBES,HS1998ELVAPAR,TH2004UAIAEEFSAFSAMS,WCTLTCMY2014BOAAOSFFTTSP}\only<15->{ and ERT\scitep{HAFR2012RPBBOBES,WCTLTCMY2014BOAAOSFFTTSP}} (over time)}%
 \end{itemize}%
 }%
 %
-\item<18-> But this is all \emph{very} cumbersome, involves much work and much data\dots%
+\item<16-> But doing this is cumbersome\dots%
 \end{enumerate}%
 }%
-\item<19-> \alert<19>{The \optimizationBenchmarking\ framework \textcolor<19>{green}{can automatize} much of the evaluation procedure}\uncover<20>{\dots}%
-\item<20-> {\dots}and make use of \textcolor<20>{red}{meta-data} about experiments to group and aggregate information.% 
+\item<17-> The \optimizationBenchmarking\ framework \textcolor<17>{green}{can automatize} much of the evaluation procedure\uncover<18>{\dots}%
+\item<18-> {\dots}and make use of \textcolor<18>{red}{meta-data} about experiments to group and aggregate information.% 
 \end{itemize}%
 %
 \locateWithCaption{3}{%
