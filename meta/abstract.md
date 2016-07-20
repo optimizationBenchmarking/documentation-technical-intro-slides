@@ -1,10 +1,12 @@
-# optimizationBenchmarking.org: An Introduction
+# optimizationBenchmarking.org: A Technical Introduction
 
 Optimization algorithms have become a standard tool in many application areas such as management, logistics, engineering, design, chemistry, and medicine. They provide close-to-optimal approximate solutions for computationally hard problems within feasible time. This field has grown and evolved for the past 50 years and has several top-level journals dedicated to it. Research in optimization is focused on reducing the algorithm runtime and increasing the result quality. For such research to succeed and publications to have true impact on the real world, we need to be able to
 
   - analyze the performance of an algorithm, to  
   - analyze the influence of different features of an optimization problem on its hardness, and to  
   - compare the performance of different algorithms in a fair and sound fashion.
+
+This presentation is a technical introduction, mainly intended for an audience who is already familiar with optimization and benchmarking. It is relatively short and centered around a hands-on example of how to use our software.
 
 Many optimization methods are [anytime algorithms](https://en.wikipedia.org/wiki/Anytime_algorithm), meaning that they start with a (usually bad) guess about the solution and step-by-step improve their approximation quality. All [evolutionary algorithms](https://en.wikipedia.org/wiki/Evolutionary_algorithm), all [local search](https://en.wikipedia.org/wiki/Local_search_%28optimization%29) algorithms (such as [Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing) and [Tabu Search](https://en.wikipedia.org/wiki/Tabu_search)), all [swarm intelligence](https://en.wikipedia.org/wiki/Swarm_intelligence) methods for optimization (such as [ant colony](https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms) and [particle swarm](https://en.wikipedia.org/wiki/Particle_swarm_optimization) optimization), [CMA-ES](https://en.wikipedia.org/wiki/CMA-ES) and [memetic algorithms](https://en.wikipedia.org/wiki/Memetic_algorithm), but also several exact and deterministic methods such as [branch and bound](https://en.wikipedia.org/wiki/Branch_and_bound) belong into this class, just to name a few.
 
