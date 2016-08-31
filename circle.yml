@@ -4,8 +4,9 @@
 ## https://circleci.com/gh/optimizationBenchmarking/documentation-technical-intro-slides
 #
 machine:
-# Install the newest version of ant.
+# Install the newest version of texlive.
   pre:
+  - sudo add-apt-repository ppa:jonathonf/texlive-2016
   - sudo apt-get -q -y update
   - sudo apt-get -q -y install texlive texlive-lang-cjk texlive-luatex texlive-xetex texlive-science
     
