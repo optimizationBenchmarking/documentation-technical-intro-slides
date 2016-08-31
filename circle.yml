@@ -8,7 +8,7 @@ machine:
   pre:
   - sudo add-apt-repository -y ppa:jonathonf/texlive-2016
   - sudo apt-get -q -y update
-  - sudo apt-get -q -y --no-install-recommends install texlive texlive-lang-cjk texlive-luatex texlive-xetex texlive-science
+  - sudo apt-get -q -y --no-install-recommends install texlive texlive-lang-cjk texlive-lang-chinese texlive-luatex texlive-xetex texlive-science
     
 # We do nothing here.
 dependencies:
