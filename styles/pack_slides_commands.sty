@@ -141,7 +141,6 @@
 %
 }%
 %
-% define appendix command; print #1 on appendix slide
 \gdef\appendices#1{%
 \pdfbookmark[1]{Appendices}{appendices}%
 \section*{Appendices}%
@@ -159,6 +158,7 @@
 \expandafter\pdfbookmark\expandafter[\expandafter2\expandafter]\expandafter{##1}{appendix\the\@appendix@hrefids}%
 \subsection{##1}%
 }%
+%
 }%
 %
 %
@@ -174,11 +174,12 @@
 {\message{** patching of \string\beamer@@frametitle failed **}}%
 %
 %
-\gdef\printSectionOutlines{%
+\gdef\printSectionOutlines#1{%
 \AtBeginSection[]{%
 \begin{frame}%
 \frametitle{Section Outline}%
 \tableofcontents[currentsection,subsectionstyle=show/show/hide]%
+#1%
 \end{frame}%
 }%
 }%
