@@ -16,16 +16,20 @@
 \begin{frame}[t]%
 \frametitle{\maxSat}%
 \begin{itemize}%
-\item Maximum Satisfiability Problems (\maxSat)\uncover<2->{:%
+\item \only<8->{Maximum }Satisfiability Problems (SAT)\only<-7>{\scitep{HS2000SAORFROS}}\only<8->{\scitep{HS2005SLSFAA}}\uncover<2->{:%
 \begin{itemize}
-\item Given: formula \maxSatFormula\ in Boolean logic consisting of \maxSatVariables\ Boolean variables $\vec{\maxSatVariable}=(\maxSatVariablei{1}, \maxSatVariablei{2}, \dots, \maxSatVariablei{\maxSatVariables})^T$ which each can be either \texttt{true} or \texttt{false}%
-\item<3-> \maxSatFormula\ consists of \maxSatClauses\ clauses which are combined with \inQuotes{$\land$}%
-\item<4-> Goal: minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$%
-\item<5-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
+\item Given: Formula \maxSatFormula\ in Boolean logic%
+\uncover<3->{ with of \maxSatVariables\ Boolean variables $\vec{\maxSatVariable}=(\maxSatVariablei{1}, \maxSatVariablei{2},\dots, \maxSatVariablei{\maxSatVariables})$%
+\uncover<4->{, which appear either directly or negated%
+\uncover<5->{ in \maxSatClauses\ \inQuotes{\texttt{or}} clauses%
+\uncover<6->{, which are all combined with into one \inQuotes{\texttt{and}}}}}}%
+\item<7-> \only<-7>{SAT Goal: find a setting for these variables so that $\maxSatFormula$ becomes \texttt{true}}%
+\only<8->{\maxSat\ Goal\scitep{HS2005SLSFAA}: minimize objective function $\objectiveFunctionb{\vec{x}} = \textnormal{number of clauses which are \texttt{false}}$.}%
+\item<9-> $\objectiveFunctionb{\vec{x}}=0$ $\Longrightarrow$ all clauses are \texttt{true}, SAT problem solved%
 \end{itemize}%
 }%
 %
-\item<6-> We want to compare the performance of \textcolor{red}{six different algorithm setups}\uncover<7->{:%
+\item<10-> We want to compare the performance of \textcolor{red}{six different} (trivial) \textcolor{red}{algorithm setups}\uncover<11->{:%
 \begin{enumerate}%
 \item 1-flip Hill Climber%
 \item 1-flip Hill Climber with Restarts%
@@ -36,11 +40,15 @@
 \end{enumerate}%
 }%
 %
-\item<8-> As benchmark, we use 100 instances from \satLib\expandafter\scitep{\satLibReferences} with \textcolor{red}{different values of \maxSatVariables} (and \maxSatClauses)%
+\item<12-> For the experiment, we want to solve $10\times 10$ (simple) instances from \satLib\expandafter\scitep{\satLibReferences} with \textcolor{red}{10 different values of \maxSatVariables} (and \maxSatClauses)%
 %
 \end{itemize}%
 %
-\locateGraphic{-5}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.54}%
+\locateGraphic{-2,7-9}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat}{0.225}{0.54}%
+\locateGraphic{3}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_variables}{0.225}{0.54}%
+\locateGraphic{4}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_negation}{0.225}{0.54}%
+\locateGraphic{5}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_or}{0.225}{0.54}%
+\locateGraphic{6}{width=0.55\paperwidth}{graphics/problem_examples/sat/sat_and}{0.225}{0.54}%
 %
 \strut\\\strut\\\strut\\\strut\\\strut\\\strut\\\strut\\\strut%
 %
